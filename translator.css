@@ -1,0 +1,126 @@
+body{
+    background: green;
+}
+
+header{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size:36px;
+    margin-top:0px;
+    padding:0px;
+    color:orange;
+    text-align: center;
+}
+hr{
+    width:35%;
+    opacity:45%;
+}
+h3{
+    font-family:fantasy;
+    padding-top:10px;
+    margin:0px;
+    color:orange;
+    text-align: center;
+}
+
+
+.container{
+    width: 100%;
+    display: flex;
+    margin-top: 100px;
+    align-items: center;
+    justify-content: center;
+}
+.wrapper{
+    background-color: #97be95;
+    width: 65%;
+    height: 60vh;
+}
+
+button, select{
+    background:transparent;
+    border:solid green;
+}
+button:hover, select:hover{
+    border:solid orange;
+}
+
+
+.text-input{
+    display:flex;
+    justify-content: center;
+    width:100%;
+    height:45vh;
+    padding-top:3px;
+    margin-top:3px;
+    padding-bottom:3px;
+    margin-bottom:10px;
+}
+
+.enter-text, .translated {
+    width:35%;
+    background-color: black;
+    color:orange;
+    border: solid 2px orange;
+    font-size:15px;
+}
+.enter-text{
+    margin-right:2px;
+}
+.translated{
+    margin-left:2px;
+}
+
+.wrapperbtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:100%;
+}
+.translatebtn{
+    width: 70%;
+    margin-bottom: 5px;
+    background-color: orange;
+    color: green;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-align: center;
+}
+.translatebtn:hover{
+    background: lightseagreen;
+    font-size:14px;
+    letter-spacing: 0.3vh;
+    border:solid 2.5px;
+    cursor: pointer;
+    transition: ease-in-out 0.2s;
+}
+.translatebtn:active{
+    color:rgb(255, 189, 68);
+    background: orange;
+    font-size:14px;
+    letter-spacing: 0.3vh;
+    border:solid 2.5px black;
+    cursor: pointer;
+    transition: ease-in-out 0.2s;
+}
+
+img{
+    width:2vw;
+    padding: 0;
+    margin: 0;
+}
+
+.optionswrapper{
+    display:flex;
+    width:100%;
+    justify-content: center;
+}
+
+.options{
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+    margin-top:12px;
+    margin-bottom:0px;
+}

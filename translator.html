@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Translator!</title>
+        <link rel="stylesheet" href="translator.css">
+    </head>
+    <body>
+        <header>Let's Learn a Language</header><hr>
+        <div>
+        <h3>Welcome To Our Translator</h3>
+        </div>
+
+        <div class="container">
+            <div class="wrapper">
+                <div class="optionswrapper">
+                    <div class="options">
+                        <div class="from">
+                            <!--<button id="volume-from"><img src="volume-medium-outline.svg"></button>
+                            <button id="copy-from"><img src="copy-outline.svg"></button>-->
+                            <select></select>
+                        </div>
+                        <button class="swap"><img src="swap-horizontal-outline.svg"></button>
+                        <div class="to">
+                            <select></select>
+                            <!--<button id="volume-to"><img src="copy-outline.svg"></button>
+                            <button id="copy-to"><img src="volume-medium-outline.svg"></button>-->
+                        </div>
+                    </div>
+                </div>
+                <div class="text-input">
+                    <textarea id ="fromText" class="enter-text" placeholder="Enter Text"></textarea>
+                    <textarea id="toText" class="translated" placeholder="Translation" readonly></textarea><br>  
+                </div>
+                <div class="wrapperbtn">
+                        <button id="translateBtn" class="translatebtn">Translate</button>
+                </div>
+            </div>
+        </div>
+    <script src="countries.js"></script>
+    <script src="translator.js"></script>
+    </body>
+</html>
