@@ -1,0 +1,59 @@
+    translateBtn.addEventListener("click", () => {
+           const text = fromText.value.trim(),
+               translateFrom = select[0].value,
+               translateTo = select[1].value;
+
+           var formData = {
+               text: text,
+               from: translateFrom,
+               to: translateTo
+           };
+
+           if (!text) return;
+
+           toText.setAttribute("placeholder", "Translating...");
+           toText.value = "";
+
+           $.ajax({
+               url: '@Url.Action("Translate", "Translation")',
+               data: JSON.stringify(formData),
+               contentType: "application/json",
+               method: "POST",
+               success: function (response) {
+                   if (response) {
+                       var translated = response.responseData.translatedText;
+                       $.each(response.matches, function (i, match) {
+                           if (match.id === 0) {
+                               translated = match.translation;
+                           }
+                       });
+                       toText.value = translated;
+                       toText.setAttribute("placeholder", "Translation");
+                   }
+               },
+               error: function () {
+                   toText.setAttribute("placeholder", "Error translating. Try again.");
+               }
+           });
+       });
+
+
+
+
+        [HttpPost]
+        public async Task<IActionResult> Translate([FromBody] TranslateRequest request)
+        {
+            if (string.IsNullOrWhiteSpace(request.Text))
+                return BadRequest("Text is required.");
+
+            var apiUrl = $"https://api.mymemory.translated.net/get?q={Uri.EscapeDataString(request.Text)}&langpair={request.From}|{request.To}";
+
+            var client = httpClientFactory.CreateClient();
+            var response = await client.GetAsync(apiUrl);
+
+            if (!response.IsSuccessStatusCode)
+                return StatusCode((int)response.StatusCode, "Translation API error.");
+
+            var json = await response.Content.ReadAsStringAsync();
+            return Content(json, "application/json");
+        }
